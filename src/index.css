@@ -55,9 +55,9 @@ code {
 
 .button-two{
   display: flex;
+  padding-top: 40vh;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
 }
 
   .continue-feedback-button{
@@ -335,6 +335,6 @@ code {
   box-shadow: none !important;
   margin-top: 3vh!important;
 }
-.food{
-font-size: larger;
+input{
+  padding: 10px 10px;
 }

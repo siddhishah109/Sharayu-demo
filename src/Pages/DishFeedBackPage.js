@@ -16,7 +16,7 @@ const DishFeedBackPage = () => {
       useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch(`http://localhost:4000/api/event/${eventId}`);
+            const response = await fetch(`https://kitchen-yver.onrender.com/api/event/${eventId}`);
             const data = await response.json();
     
             if (data.status === 'success') {

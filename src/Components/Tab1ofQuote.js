@@ -12,7 +12,7 @@ const Tab1ofQuote = ({ onGetQuote }) => {
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/category')
+    axios.get('https://kitchen-yver.onrender.com/api/category')
       .then((response) => {
         const data = response.data;
         if (data.status === 'success') {

@@ -18,7 +18,7 @@ const UserFeedBackPage = () => {
 
   useEffect(() => {
     // Fetch the event name from the API
-    axios.get(`http://localhost:4000/api/event/${eventId}`)
+    axios.get(`https://kitchen-yver.onrender.com/api/event/${eventId}`)
       .then(response => {
         setEventName(response.data.data.event.event_name);
       })
