@@ -3,16 +3,16 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FoodDropdown from './FoodDropdown';
 import Container from '@mui/material/Container';
-import axios from 'axios';
+import axios from '../config/axios';
 
 const Tab1ofQuote = ({ onGetQuote }) => {
-  const [guestnumber, setGuestnumber] = useState('');
+  const [guestnumber, setGuestnumber] = useState();
   const [selectedCategories, setSelectedCategories] = useState({});
   const [categoryData, setCategoryData] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://kitchen-yver.onrender.com/api/category')
+    axios.get('/api/category')
       .then((response) => {
         const data = response.data;
         if (data.status === 'success') {
@@ -29,14 +29,14 @@ const handleCategoryOptionSelect = (category, option) => {
     const isOptionSelected = selectedCategories[category] && selectedCategories[category].includes(option);
   
     if (isOptionSelected) {
-      // If the option is already selected, remove it from the selectedProducts array
+      
       setSelectedProducts((prevSelectedProducts) => prevSelectedProducts.filter((product) => product.product_name !== option));
       setSelectedCategories((prevSelectedCategories) => ({
         ...prevSelectedCategories,
         [category]: prevSelectedCategories[category].filter((selectedOption) => selectedOption !== option),
       }));
     } else {
-      // If the option is not selected, add it to the selectedProducts array
+   
       const selectedProduct = categoryData
         .find((cat) => cat.category_id === category)
         .products.find((product) => product.product_name === option);
@@ -65,7 +65,7 @@ const handleCategoryOptionSelect = (category, option) => {
       <div className="no-of-guest">
         <TextField
           id="guestnumber"
-          type="text"
+          type="number"
           placeholder="Enter Number of guests"
           value={guestnumber}
           fullWidth

@@ -55,10 +55,11 @@ code {
 
 .button-two{
   display: flex;
-  padding-top: 40vh;
-  flex-direction: column;
-  justify-content: center;
+    padding-top: 40vh;
+    flex-direction: column;
+    justify-content: center;
 }
+
 
   .continue-feedback-button{
     min-width: 60vw !important;
@@ -214,14 +215,14 @@ code {
   
 }
 
-.css-96uuyl {
+/* .css-96uuyl {
   position: relative;
   border-radius: 25px !important;
   border: 1px solid #CCCCE0 !important;
   background-color: rgba(255, 255, 255, 0.15);
  margin-right: 0px !important; ; 
   width: 80vw !important;
-}
+} */
 
 .search-menu{
   display: flex;
@@ -253,9 +254,9 @@ code {
   padding-right: 3vw;
 }
 
-.css-ahj2mt-MuiTypography-root {
+/* .css-ahj2mt-MuiTypography-root {
   height: 80vh;
-}
+} */
 
 .thankyouQuote{
   display: flex;
@@ -335,6 +336,10 @@ code {
   box-shadow: none !important;
   margin-top: 3vh!important;
 }
+
 input{
-  padding: 10px 10px;
+  padding: 10px 10px !important;
+}
+.MultiTabs-indicator{
+  background-color: black !important;
 }

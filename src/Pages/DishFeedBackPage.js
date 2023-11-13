@@ -3,14 +3,12 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import ProductFeedback from '../Components/ProductFeedback';
 import dish from '../img/dish.png';
-import { useCustomer } from '../Components/CustomerContext';
-import {useEvent} from '../Components/EventContext';
-
+import { useParams } from 'react-router-dom';
 
 const DishFeedBackPage = () => {
       const navigate = useNavigate();
-      const { customerId } = useCustomer();
-      const { eventId } = useEvent();
+      const customerId = localStorage.getItem('customerId');
+      const { eventId } = useParams();
       const [productFeedback, setProductFeedback] = useState([]);
       const [productsData, setProductsData] = useState([]);
       useEffect(() => {
@@ -38,7 +36,7 @@ const DishFeedBackPage = () => {
         console.log('Product Feedback Data:', productFeedback);
       
         try {
-          const response = await fetch(`http://localhost:4000/api/customer/${customerId}`, {
+          const response = await fetch(`https://kitchen-yver.onrender.com/api/customer/${customerId}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
@@ -85,7 +83,7 @@ const handleProductFeedback = (productid, name, rating, feedback) => {
 };
       const handleSubmit1 = () => {
     
-        navigate('/menu');
+        navigate('/');
       
       };
 
