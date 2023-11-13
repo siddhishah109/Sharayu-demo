@@ -46,11 +46,12 @@ const Search = styled('div')(({ theme }) => ({
 
 const Searchbar = () => {
   return (
-    <div className='search-menu'><Search>
-    <SearchIconWrapper>
+    <div className='search-menu'><Search className='search'>
+    <SearchIconWrapper className='search-wrapper'>
       <SearchIcon />
     </SearchIconWrapper>
     <StyledInputBase
+    className='search-input'
       placeholder="Search"
       inputProps={{ 'aria-label': 'search' }}
     />
