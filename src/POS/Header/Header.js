@@ -7,7 +7,7 @@ const Header = () => {
     <div className='nav'>
         <div className='d-flex nav1'> 
             <div className='nav-t'> POS</div>
-            <div className='nav-t'>Date</div>
+            <div className='date-box nav-t'><div>Date</div> <div className='date-nav'>11/1/2023</div></div>
         </div>
         <div className='d-flex nav2 '>
             <div className='nav-t'> Dashboard</div>
