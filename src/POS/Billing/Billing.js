@@ -18,32 +18,39 @@ const Billing = () => {
        <div className='table-billing'>
         <table>
         <thead>
-        <tr>
-          <th>Barcode No.</th>
-          <th>Product Name</th>
-          <th>Qtty</th>
-          <th>Total Price</th>
+        <tr className="title-row">
+          <th className="d-flex align-items-start"><span className='span-th'>Barcode No.</span></th>
+          <th className=""><span className='span-th'>Product Name</span></th>
+          <th className=""><span className='span-th'>Qtty</span></th>
+          <th className="d-flex justify-content-end"><span className='span-th'>Total Price</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+          <td>13442</td>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>2432</td>
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
         </tr>
         <tr>
-          <td>3</td>
+          <td>3563</td>
           <td >Larry the Bird</td>
           <td >Larry the Bird</td>
           <td>@twitter</td>
         </tr>
+        <tr>
+          <td>2363</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        
       </tbody>
         </table>
        </div>

@@ -41,9 +41,14 @@
     font-size: x-large;
 }
 
-.table-billing{
+.table-billing {
     background-color: #0d99ff;
     height: 65vh;
+    padding-top: 5vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-bottom: 5vh;
+    overflow-y: auto;
 }
 .billing-button{
     padding: 20px;
@@ -55,4 +60,28 @@
 
 table{
     width: 100%;
+}
+.table-billing table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+
+  .table-billing td {
+    background-color: white;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.table-billing tbody td {
+    border-top: 30px solid #0d99ff;
+}
+.table-billing thead .title-row th {
+    font-size: x-large;
+    font-weight: 500;
+  }
+.span-th{
+    background: white;
+    padding: 10px 20px;
 }
