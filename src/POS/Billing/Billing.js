@@ -1,11 +1,26 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import './Billing.css'
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 
 
 const Billing = () => {
+  const [data, setData] = useState([
+    { barcode: 13442, productName: 'Mark', quantity: 1, totalPrice: 55 },
+    { barcode: 2432, productName: 'Jacob', quantity: 1, totalPrice: 2 },
+    { barcode: 3563, productName: 'Larry the Bird', quantity: 1, totalPrice: 5 }
+  ]);
+
+  const handleQuantityChange = (index, change) => {
+    const newData = [...data];
+    newData[index].quantity += change;
+    if (newData[index].quantity < 1) {
+      newData[index].quantity = 1;
+    }
+    setData(newData);
+  };
+
+
   return (
     <div className='body'>
   <div  className='billing-tick-row'>
@@ -26,30 +41,21 @@ const Billing = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>13442</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2432</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3563</td>
-          <td >Larry the Bird</td>
-          <td >Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-        <tr>
-          <td>2363</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
+      {data.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.barcode}</td>
+                  <td>{item.productName}</td>
+                  <td>
+                  <div className="quantity-container">
+                      <button className='button-quantity' onClick={() => handleQuantityChange(index, -1)}>-</button>
+                      <span>{item.quantity}</span>
+                      <button  className='button-quantityPlus' onClick={() => handleQuantityChange(index, 1)}>+</button>
+                    </div>
+                  </td>
+                  <td>{item.totalPrice}</td>
+                </tr>
+              ))}
+  
         
       </tbody>
         </table>
